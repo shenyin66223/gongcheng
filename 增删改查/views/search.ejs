@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+
+<head>
+    <h1 style="color:yellow">
+        <%= title %>
+    </h1>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+    <link rel="stylesheet" href="/stylesheets/on_off_switch.css" type="text/css">
+    <style>
+        body {
+            background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3946360612,527426986&fm=200&gp=0.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="color: #222222">
+        <%if(success){%>
+            <%= success%>
+                <%}%>
+                    <%if(error){%>
+                        <%= error%>
+                            <%}%>
+    </h2>
+    <div class="container" style="color:beige">
+        <table class="table table-condensed" style="margin-top: 15px">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>姓名</th>
+                    <th>手机</th>
+                    <th>邮箱</th>
+                    <th>注册日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function (data,index) { %>
+                    <tr>
+                        <td>
+                            <%= data.name%>
+                        </td>
+                        <td>
+                            <%= data.username%>
+                        </td>
+                        <td>
+                            <%= data.phone%>
+                        </td>
+                        <td>
+                            <%= data.email%>
+                        </td>
+                        <td>
+                            <%= data.time%>
+                        </td>
+                    </tr>
+                    <%})%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+<script src="/javascripts/on_off_switch.js"></script>
