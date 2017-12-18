@@ -26,20 +26,17 @@
 
 <body>
     <div class="container">
-        <form method="post" role="form" action="/change/<%= data.name%>/<%= data.username%>">
+        <form method="post" role="form" action="/change/<%= data.name%>">
             <div class="form-group">
-                <label for="name">用户名:
-                    <span style="color:blue">
+                <label for="name">员工：
+                    <span style="color:yellow">
                         <%= data.name%>
                     </span>
                 </label>
             </div>
             <div class="form-group">
-                <label for="username">姓名:
-                    <span style="color:red">
-                        <%= data.username%>
-                    </span>
-                </label>
+                <label for="username">昵称</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="<%= data.username%>" required>
             </div>
             <div class="form-group">
                 <label for="password">密码</label>

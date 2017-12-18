@@ -57,7 +57,7 @@ module.exports = function (app) {
         })
     })
     //修改数据
-    app.post('/change/:name/:username',function (req,res) {
+    app.post('/change/:name',function (req,res) {
         Post.update(req.params.name,req.params.username,req.body.phone,
             req.body.email,function (err,data) {
                 if(err){

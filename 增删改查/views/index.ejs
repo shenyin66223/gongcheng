@@ -26,17 +26,8 @@
 </head>
 
 <body>
-  <h2 style="color: #222222">
-    <%if(success){%>
-      <%= success%>
-        <%}%>
-          <%if(error){%>
-            <%= error%>
-              <%}%>
-  </h2>
   <div class="container">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-      <span class="	glyphicon glyphicon-plus"></span>添加</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加</button>
     <form action="/search" role="form" style="display:block; margin-top:15px">
       <input type="text" name="search" placeholder="请输入搜索的用户名">
       <input type="submit" class="btn btn-info" value="搜索">
@@ -71,7 +62,7 @@
             <td>
               <%= data.time%>
             </td>
-            <td>
+            <td style="width:40px;">
               <a href="/edit/<%= data.name%>/<%= data.username%>/<%= data.phone%>/<%= data.email%>" type="submit" class="btn btn-warning btn-xs">修改</a>
             </td>
             <td>
@@ -97,7 +88,7 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="请输入用户名" required>
               </div>
               <div class="form-group">
-                <label for="username">姓名</label>
+                <label for="username">昵称</label>
                 <input type="text" name="username" class="form-control" id="username" placeholder="请输入姓名" required>
               </div>
 
@@ -122,6 +113,14 @@
                 <input type="submit" class="btn btn-primary" value="提交"></input>
               </div>
             </form>
+            <h2 style="color: #222222">
+              <%if(success){%>
+                <%= success%>
+                  <%}%>
+                    <%if(error){%>
+                      <%= error%>
+                        <%}%>
+            </h2>
           </div>
         </div>
         <!-- /.modal-content -->
